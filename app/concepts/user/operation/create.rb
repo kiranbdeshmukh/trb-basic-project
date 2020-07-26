@@ -4,7 +4,7 @@ module User::Operation
     step Contract::Validate()
     step Contract::Persist()
 
-    fail handle_failure
+    fail :handle_failure
 
     def handle_failure(ctx, **)
       ctx[:error] = "Got error while creating user"
